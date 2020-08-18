@@ -1,1 +1,6 @@
-<h5>recipe item</h5>
+<a href="#" (click)="onSelected()" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+    {{ recipe.name}}
+    <div class="image-parent">
+    <img [src]="recipe.imagePath" class="img-fluid" [alt]="recipe.name">
+    </div>
+</a>
