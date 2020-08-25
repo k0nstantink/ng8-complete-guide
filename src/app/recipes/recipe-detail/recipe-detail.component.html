@@ -8,14 +8,19 @@
             <!-- jumbotron description -->
             <p class="lead">{{recipe.description}}</p>
             <hr class="my-3">
-            <p>Ingredients</p>
+            <!-- ingredient list --> 
+                <div class="m-3">
+                <p class="lead display-5">Ingredients</p>    
+                <ul class="list-group" *ngFor="let ingredient of recipe.ingredients" >
+                    <li class="list-group-item list-group-item-dark">{{ ingredient.name }} - {{ ingredient.amount }}</li>
+                </ul>
+                </div>
             </div>
         </div>
-
             <!-- button menus -->
                 <div class="row">
                     <div class="col-6">
-                    <a class="btn btn-primary btn-lg" href="#" role="button">Add to Shopping List</a> 
+                    <button (click)="addToShoppingList()" class="btn btn-primary btn-lg">Add to Shopping List</button> 
                     </div>
                     <div class="col-6">
                     <div class="btn-group float-right" role="group">
@@ -23,6 +28,7 @@
                         id="btnGroupDrop" 
                         type="button" 
                         class="btn btn-secondary btn-lg dropdown-toggle"
+                        appDropdown
                         data-toggle="dropdown">Action</button>
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-item">Edit</a>

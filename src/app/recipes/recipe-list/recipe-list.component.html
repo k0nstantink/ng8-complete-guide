@@ -1,15 +1,10 @@
 
 
     <button class="btn btn-success btn-block">New Recipe</button>
-     <!-- <app-recipe-item></app-recipe-item> -->
-
     <h6 class="text-muted my-2">Recipe list</h6>
 
     <div class="list-group" *ngFor="let recipeEl of recipes">
-    <app-recipe-item 
-        [recipe]="recipeEl" 
-        (recipeSelected)="onRecipeSelected(recipeEl)">
-    </app-recipe-item>
+        <app-recipe-item [recipe]="recipeEl"></app-recipe-item>
     </div> 
 
  
