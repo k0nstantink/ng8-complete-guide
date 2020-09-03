@@ -1,7 +1,8 @@
 <app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container"> 
-      <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes> 
-      <app-shopping-list *ngIf="loadedFeature === 'shoppinglist'"></app-shopping-list>
+      <router-outlet></router-outlet>
+      <!-- <app-recipes *ngIf="loadedFeature === 'recipe'"></app-recipes> 
+      <app-shopping-list *ngIf="loadedFeature === 'shoppinglist'"></app-shopping-list> -->
    
        <!-- use fixed-bottom for sticky footer -->
       <footer class="bg-dark py-4 mt-5"> 
