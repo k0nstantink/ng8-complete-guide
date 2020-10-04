@@ -31,8 +31,8 @@
                         appDropdown
                         data-toggle="dropdown">Action</button>
                         <div class="dropdown-menu" style="cursor: pointer">
-                            <a class="dropdown-item">Edit</a>
-                            <a class="dropdown-item">Delete</a>
+                            <a (click)="onEditRecipe()" class="dropdown-item">Edit</a>
+                            <a (click)="onDeleteRecipe()" class="dropdown-item">Delete</a>
                         </div>
                     </div>
                 </div> 

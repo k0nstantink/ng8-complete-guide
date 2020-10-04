@@ -1,4 +1,9 @@
-<a style="cursor: pointer" (click)="onSelected()" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+<a 
+    [routerLink]="[index]"
+    style="cursor: pointer" 
+    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+    routerLinkActive="active"
+    >
     {{ recipe.name}}
     <div class="image-parent">
     <img [src]="recipe.imagePath" class="img-fluid" [alt]="recipe.name">
