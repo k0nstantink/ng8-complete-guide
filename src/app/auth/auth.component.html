@@ -9,7 +9,9 @@
             {{ error }}
         </div> -->
 
-        <app-alert *ngIf="error" [message]="error" (close)="onHandleError()"></app-alert>
+        <ng-template appPlaceHolder></ng-template>
+
+        <!-- <app-alert *ngIf="error" [message]="error" (close)="onHandleError()"></app-alert> -->
 
         <form (ngSubmit)="onSubmit(authForm)" #authForm="ngForm" *ngIf="!isLoading">
             <div class="form-group" >
