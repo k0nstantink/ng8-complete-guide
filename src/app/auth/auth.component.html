@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-xs-12 col-md-6">
+
+        <div class="d-flex my-4 justify-content-center" *ngIf="isLoading">
+            <app-loading-spinner></app-loading-spinner>
+        </div>
+
+        <!-- <div class="alert alert-danger my-2" role="alert" *ngIf="error">
+            {{ error }}
+        </div> -->
+
+        <app-alert *ngIf="error" [message]="error" (close)="onHandleError()"></app-alert>
+
+        <form (ngSubmit)="onSubmit(authForm)" #authForm="ngForm" *ngIf="!isLoading">
+            <div class="form-group" >
+                <label for="email">Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    class="form-control"
+                    ngModel
+                    name="email"
+                    required
+                    email
+                    #email="ngModel"
+                    >
+                <small class="form-text text-danger" *ngIf="!email.valid && email.touched">Please enter a valid email</small>
+                <small class="form-text text-success" *ngIf="email.valid">Looks good!</small>
+            </div>
+            <div class="form-group">
+                <label for="Password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    class="form-control"
+                    ngModel
+                    name="password"
+                    required
+                    password
+                    minlength="6"
+                    #password="ngModel"
+                    >
+                <small class="form-text text-danger" *ngIf="!password.valid && password.dirty">Please enter a valid password</small>
+                <small class="form-text text-success" *ngIf="password.valid">Looks good!</small>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="submit" [disabled]="!authForm.valid" class="btn btn-primary">{{ isLoginMode ? 'Login' : 'Sign Up'}}</button>
+                <button type="button" (click)="onSwitchMode()" class="btn btn-secondary">Switch To {{ isLoginMode ? 'Sign Up' : 'Login'}}</button>
+            </div>
+        </form>
+    </div>
+</div>
